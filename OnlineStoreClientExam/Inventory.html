@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Inventory Css -->
+    <link rel="stylesheet" href="css/inventory.css" />
+
+    <!-- <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      /* ================= NAVBAR ================= */
+
+      nav {
+        width: 100%;
+        background-color: #f8f9fa;
+        padding: 20px 0;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      nav ul li {
+        display: inline-block;
+        margin: 0 30px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #343a40;
+        font-size: 18px;
+        transition: 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: rgb(5, 113, 238);
+      }
+
+      /* Cart Count Section */
+      #cart-count {
+        background-color: red;
+        color: white;
+        padding: 3px 7px;
+        border-radius: 50%;
+        margin: 4px;
+      }
+
+      .layout {
+        width: 100%;
+        margin: 20px auto;
+      }
+
+      .container {
+        width: 500px;
+        height: auto;
+        vertical-align: top;
+        display: inline-block;
+        padding: 10px;
+        border: 2px solid burlywood;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        margin-left: 400px;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      input {
+        width: 95%;
+        padding: 8px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
+
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
+
+      label {
+        display: block;
+      }
+
+      button {
+        padding: 8px 15px;
+        margin: 5px 3px;
+        border: none;
+        background: #3094ff;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.5ms;
+      }
+
+      button:hover:not(:disabled) {
+        transform: scale(1.1);
+        background: #0073ee;
+        cursor: pointer;
+      }
+
+      /* Disabled State */
+      button:disabled {
+        background: #a0a0a0;
+        /* Grey = Disabled */
+        color: #e0e0e0;
+        cursor: not-allowed;
+        transform: scale(1);
+        opacity: 0.7;
+      }
+
+      #product-container {
+        width: 300px;
+        display: inline-block;
+        vertical-align: top;
+        margin: 20px;
+        text-align: center;
+      }
+
+      /* ================= Card ================= */
+
+      .card {
+        width: 250px;
+        min-height: 400px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        padding: 15px;
+        margin: 10px;
+        text-align: center;
+        display: inline-block;
+      }
+
+      .card img {
+        width: 100%;
+      }
+
+      .card h3,
+      .card h4,
+      .card p {
+        margin: 5px 0;
+      }
+
+      /* ================= FOOTER ================= */
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #343a40;
+        color: #f8f9fa;
+      }
+
+      footer div {
+        display: inline-block;
+        padding: 10px;
+      }
+
+      footer div a {
+        padding: 4px;
+        transition: 0.5ms;
+        color: rgba(10, 132, 240, 0.808);
+      }
+
+      footer div a:hover {
+        color: rgb(247, 233, 113);
+      }
+
+      footer div i {
+        padding: 4px;
+        transition: 0.5ms;
+      }
+
+      footer div i:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+
+      /* Responsive (Mobile) */
+      @media (max-width: 768px) {
+        nav ul li {
+          display: block;
+          text-align: center;
+          border-top: 1px solid rgb(12, 12, 12);
+          border-bottom: 1px solid rgb(5, 5, 5);
+
+          padding: 10px;
+        }
+
+        nav ul li a {
+          text-decoration: none;
+          color: black;
+          font-size: 18px;
+          transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+          color: yellow;
+        }
+      }
+    </style> -->
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="Home.html"
+              ><i class="fa-solid fa-bag-shopping"></i> ||
+              <i class="fa-solid fa-wallet"></i> LogicMart</a
+            >
+          </li>
+          <li><a href="Product.html">Products</a></li>
+          <li><a href="About.html">About</a></li>
+          <li class="adminOption"><a href="Inventory.html">My Inventory</a></li>
+          <li class="adminOption"><a href="User.html">My Users</a></li>
+          <li><a href="ViewOrder.html">View Orders</a></li>
+          <li>
+            <a href="cart.html">
+              <i class="fa-solid fa-cart-shopping"></i>
+              (<span id="cart-count">0</span>)
+            </a>
+          </li>
+          <li id="auth-section"></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="layout">
+        <div class="container">
+          <h2>Manage Inventory</h2>
+          <label> Select Product For Update or Delete </label>
+          <select id="ddlProdId"></select>
+
+          <label>Name</label>
+          <input type="text" id="txtName" />
+
+          <label>Price</label>
+          <input type="number" id="txtPrice" />
+
+          <label>Image</label>
+          <input type="file" id="txtImg" />
+
+          <label>Description</label>
+          <input type="text" id="txtDesc" />
+
+          <label>Quantity</label>
+          <input type="number" id="txtQty" />
+
+          <label>Category</label>
+          <select id="ddlCatId"></select>
+
+          <button id="btnAdd" onclick="addProduct()">Add</button>
+          <button id="btnSave" onclick="saveProduct()">Save</button>
+          <button id="btnEdit" onclick="editProduct()">Edit</button>
+          <button id="btnUpdate" onclick="updateProduct()">Update</button>
+          <button id="btnDelete" onclick="deleteProduct()">Delete</button>
+        </div>
+        <section id="product-container"></section>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div>
+        © 2026 LogicMart Store | Shivam Dev.
+        <a href="About.html">About</a>
+        <a href="About.html">Terms</a>
+        <a href="About.html">Privacy</a>
+        <a href="About.html">Contact Support</a>
+        <a href="About.html">Manage Cookies</a>
+      </div>
+      <div>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-square-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-youtube"></i>
+      </div>
+    </footer>
+
+    <!-- Required Js Files -->
+
+    <!-- Jquery Reference -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Loading User Profile, Admin Check, Logout Function, Single Product Data-->
+    <script src="js/common.js"></script>
+
+    <!-- All CRUD Operation On Managing The Product And Displaying The Selected Product Data -->
+    <script src="js/Inventory.js"></script>
+
+    <!-- <script>
+      $(document).ready(() => {
+        loadProductId(); //Load Products Id
+        loadCategory(); //Load Categories
+        disable();
+        clear();
+        intialButtonState();
+      });
+
+      function intialButtonState() {
+        $("#btnAdd").prop("disabled", false);
+        $("#btnSave").prop("disabled", true); // Nothing to save yet
+        $("#btnEdit").prop("disabled", false);
+        $("#btnUpdate").prop("disabled", true); // Nothing to update yet
+        $("#btnDelete").prop("disabled", false);
+      }
+
+      //Load Product Id
+
+      function loadProductId() {
+        $.ajax({
+          url: "http://localhost:50696/api/product/all",
+
+          type: "GET",
+
+          dataType: "json",
+
+          success: function (data) {
+            $("#ddlProdId").empty();
+
+            $.each(data, function (index, prod) {
+              $("#ddlProdId").append(
+                '<option value="' +
+                  prod.ProdID +
+                  '">' +
+                  prod.ProdID +
+                  "</option>",
+              );
+            });
+          },
+        });
+      }
+
+      //Load Categories
+
+      function loadCategory() {
+        $.ajax({
+          url: "http://localhost:50696/api/category/all",
+
+          type: "GET",
+
+          dataType: "json",
+
+          success: function (data) {
+            $("#ddlCatId").empty();
+
+            $.each(data, function (index, cat) {
+              $("#ddlCatId").append(
+                '<option value="' +
+                  cat.categoryId +
+                  '">' +
+                  cat.categoryName +
+                  "</option>",
+              );
+            });
+          },
+        });
+      }
+
+      //Clear For Function
+
+      function clear() {
+        $("#txtName").val("");
+        $("#txtPrice").val("");
+        $("#txtImg").val("");
+        $("#txtDesc").val("");
+        $("#txtQty").val("");
+        $("#product-container").html(""); // clear content
+        $("#product-container").hide();
+      }
+
+      //Enable Form
+
+      function enable() {
+        $("#txtName").prop("disabled", false);
+        $("#txtPrice").prop("disabled", false);
+        $("#txtImg").prop("disabled", false);
+        $("#txtDesc").prop("disabled", false);
+        $("#txtQty").prop("disabled", false);
+        $("#ddlCatId").prop("disabled", false);
+      }
+
+      //Disable Form
+
+      function disable() {
+        $("#txtName").prop("disabled", true);
+        $("#txtPrice").prop("disabled", true);
+        $("#txtImg").prop("disabled", true);
+        $("#txtDesc").prop("disabled", true);
+        $("#txtQty").prop("disabled", true);
+        $("#ddlCatId").prop("disabled", true);
+      }
+
+      //Add Button
+
+      function addProduct() {
+        clear();
+
+        $("#ddlProdId").empty();
+        $("#ddlProdId").append(
+          '<option value="0">New ProdId Will Generate!!!</option>',
+        );
+        $("#ddlProdId").prop("disabled", true);
+        enable();
+
+        $("#btnAdd").prop("disabled", true); // Can't add while adding
+        $("#btnSave").prop("disabled", false); //  Ready to save
+        $("#btnEdit").prop("disabled", true); // Can't edit while adding
+        $("#btnUpdate").prop("disabled", true); // Not updating
+        $("#btnDelete").prop("disabled", true); // Can't delete while adding
+      }
+
+      //Insert Product
+      // With Form Data And  Image Selection Feature
+
+      function saveProduct() {
+        let name = $("#txtName").val().trim();
+        let price = $("#txtPrice").val().trim();
+        let desc = $("#txtDesc").val().trim();
+        let qty = $("#txtQty").val().trim();
+        let category = $("#ddlCatId").val();
+
+        //Actual File Object
+        let file = $("#txtImg")[0].files[0];
+
+        if (!name || !price || !file || !desc || !qty) {
+          alert("Please Fill All The Fields!!!");
+          return;
+        }
+
+        let formData = new FormData();
+
+        formData.append("ProdName", name);
+        formData.append("ProdPrice", price);
+        formData.append("ProdDsc", desc);
+        formData.append("ProdQty", qty);
+        formData.append("categoryId", category);
+        formData.append("image", file);
+
+        $.ajax({
+          url: "http://localhost:50696/api/product/add",
+          type: "POST",
+          data: formData,
+          contentType: false,
+          processData: false,
+
+          success: function (res) {
+            let msg = res;
+            alert(msg);
+            $("#ddlProdId").prop("disabled", false);
+            loadProductId();
+            disable();
+            clear();
+            intialButtonState();
+          },
+
+          error: function (err) {
+            alert("Error: " + err.responseText);
+          },
+        });
+      }
+
+      function editProduct() {
+        enable();
+        $("#btnAdd").prop("disabled", true); // Can't add while editing
+        $("#btnSave").prop("disabled", true); // Not saving new record
+        $("#btnEdit").prop("disabled", true); // Already editing
+        $("#btnUpdate").prop("disabled", false); // Ready to update
+        $("#btnDelete").prop("disabled", true); // Can't delete while editing
+      }
+
+      //Update Product With Form Data And With Image Selection Feature
+      function updateProduct() {
+        let id = $("#ddlProdId").val();
+        let name = $("#txtName").val().trim();
+        let price = $("#txtPrice").val().trim();
+        let desc = $("#txtDesc").val().trim();
+        let qty = $("#txtQty").val().trim();
+        let category = $("#ddlCatId").val();
+
+        let file = $("#txtImg")[0].files[0]; // check file
+
+        let formData = new FormData();
+
+        formData.append("ProdID", id);
+        formData.append("ProdName", name);
+        formData.append("ProdPrice", price);
+        formData.append("ProdDsc", desc);
+        formData.append("ProdQty", qty);
+        formData.append("categoryId", category);
+
+        // Only append image if selected
+        if (file) {
+          formData.append("image", file);
+        }
+
+        $.ajax({
+          url: "http://localhost:50696/api/product/update",
+          type: "PUT",
+          data: formData,
+          contentType: false,
+          processData: false,
+
+          success: function (res) {
+            let msg = res;
+            alert(msg);
+            loadProductId();
+            disable();
+            clear();
+            intialButtonState();
+          },
+
+          error: function (err) {
+            alert("Update failed: " + err.responseText);
+          },
+        });
+      }
+
+      //  Delete Product
+
+      function deleteProduct() {
+        let id = parseInt($("#ddlProdId").val());
+
+        if (!id) {
+          alert("Select the prodcut id!!!");
+        }
+
+        if (!confirm("Are you sure to delete?")) return;
+
+        $.ajax({
+          url: `http://localhost:50696/api/product/delete/${id}`,
+
+          type: "DELETE",
+
+          success: (res) => {
+            let msg = res;
+            alert(msg);
+            disable();
+            clear();
+            loadProductId();
+          },
+
+          error: () => {
+            alert("Error deleting product");
+          },
+        });
+      }
+
+      //DDL Change Event
+      $("#ddlProdId").change(() => {
+        let id = $("#ddlProdId").val();
+
+        $.ajax({
+          url: "http://localhost:50696/api/product/all",
+
+          type: "GET",
+
+          dataType: "json",
+
+          success: (data) => {
+            let prod = data.find((p) => p.ProdID == id);
+
+            $("#txtName").val(prod.ProdName);
+            $("#txtPrice").val(prod.ProdPrice);
+            $("#txtDesc").val(prod.ProdDsc);
+            $("#txtQty").val(prod.ProdQty);
+            $("#ddlCatId").val(prod.categoryId);
+            $("#product-container").show();
+
+            displaySingleProducts(data);
+          },
+
+          error: () => {
+            alert("Error fetching employee");
+          },
+        });
+      });
+    </script> -->
+  </body>
+</html>

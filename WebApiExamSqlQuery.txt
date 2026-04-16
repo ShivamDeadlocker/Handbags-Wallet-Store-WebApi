@@ -1,0 +1,151 @@
+--User Type Table Like eg. User, Admin 
+
+--create table UserType 
+--(
+--TypeId int identity(1,1) primary key,
+--TypeName varchar(20) unique not null
+--);
+
+
+--User Table
+
+--create table UserDetails
+--(
+--UserID int identity(1,1) primary key,
+--UserName varchar(20) unique not null,
+--UserEmail varchar(50) unique not null,
+--UserPassword varchar(20) not null,
+--UserConfirmPassword varchar(20) not null,
+--TypeId int references UserType(TypeId) on delete cascade not null
+--);
+
+
+--Category Like Dell, Apple, HP etc.
+
+--create table Category
+--(
+--categoryId int identity(1,1) primary key,
+--categoryName varchar(20) unique not null
+--)
+
+
+--Product Info
+
+--create table ProductTable
+--(
+--ProdID int identity(1,1) primary key,
+--ProdName varchar(50) not null,
+--ProdPrice int not null check(ProdPrice>0),
+--ProdImg varchar(200) not null,
+--ProdDsc varchar(250) not null,
+--ProdQty int not null check(ProdQty>0),
+--categoryId int references Category(categoryId) on delete cascade not null 
+--)
+
+
+--Cart Info
+
+--create table Cart
+--(
+--CartID int identity(1,1) primary key,
+--UserID int references UserDetails(UserID) on delete cascade not null,
+--ProdID int references ProductTable(ProdID) on delete cascade not null,
+--CartQty int not null check(CartQty>0),
+--Price int not null check(Price>0)
+--)
+
+
+--Bill Userwise
+
+--create table Bill
+--(
+--BillID int identity(1,1) primary key,
+--UserID int references UserDetails(UserID) on delete cascade not null
+--)
+
+
+--Bill Product wise
+
+--create table BillDetails
+--(
+--BillDetailsID int identity(1,1) primary key,
+--BillID int references Bill(BillID) on delete cascade not null,
+--ProdID int references ProductTable(ProdID) on delete cascade not null,
+--BillQty int not null check(BillQty>0),BillAmt int not null check(BillAmt>0)
+--);
+
+
+--INSERT INTO UserType (TypeName) VALUES ('Admin');
+--INSERT INTO UserType (TypeName) VALUES ('User');
+
+select * from UserType;
+
+select * from UserDetails;
+
+
+--Data Of Category
+
+--INSERT INTO Category (categoryName) VALUES ('Fossil');
+--INSERT INTO Category (categoryName) VALUES ('Calvin');
+--INSERT INTO Category (categoryName) VALUES ('Lovevook');
+--INSERT INTO Category (categoryName) VALUES ('Bagsmart');
+--INSERT INTO Category (categoryName) VALUES ('Tommy');
+
+
+
+select * from Category order by categoryId;
+
+
+--Data Of Products
+
+--INSERT INTO ProductTable 
+--(ProdName, ProdPrice, ProdImg, ProdDsc, ProdQty, categoryId)
+--VALUES 
+--('Fossil Leather Wallet', 1653, 'Img/FeaturedProd/fossil-fp.jpg',
+-- 'RFID Blocking || Extra Capacity || Ultra Strong Stitching || Slim Billfold with 8 Card Slots',
+-- 10, 1);
+
+
+--INSERT INTO ProductTable 
+--(ProdName, ProdPrice, ProdImg, ProdDsc, ProdQty, categoryId)
+--VALUES 
+--('Tommy Hilfiger Wallet', 2700, 'Img/FeaturedProd/tommy-fp.jpg',
+-- 'Billfold Wallet || 4 inner card pockets, 2 hidden pockets || 1 bill compartment',
+-- 8, 5);
+
+
+--INSERT INTO ProductTable 
+--VALUES 
+--('KKXIU Shoulder Bag', 4000, 'Img/FeaturedProd/bagsmart-fp.jpg',
+-- 'High Quality Material|| High-quality PU leather fabric || Exquisite stitching ',
+-- 15, 4);
+
+
+--INSERT INTO ProductTable 
+--VALUES 
+--('Lovevook Shoulder Bag', 5000, 'Img/FeaturedProd/lovevook-fp.jpg',
+-- 'High Quality Material|| High-quality PU leather fabric || Exquisite stitching ',
+-- 15, 3);
+
+
+--INSERT INTO ProductTable 
+--VALUES 
+--('Calvin Klein Shoulder Bag', 70000, 'Img/FeaturedProd/calvin-fp.jpg',
+-- 'Gabrianna Novelty Bucket Shoulder Bag || Perfect size to hold || Roomy bucket bag',
+-- 20, 2);
+
+
+
+select * from UserDetails;
+
+select * from ProductTable;
+
+select * from Cart;
+
+select * from Bill;
+
+select * from BillDetails;
+
+
+
+Select BillQty, BillAmt from BillDetails where BillID=1

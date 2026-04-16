@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Cart Css File Reference -->
+    <link rel="stylesheet" href="css/cart.css" />
+
+    <!-- <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      /* ================= NAVBAR ================= */
+      nav {
+        width: 100%;
+        background-color: #f8f9fa;
+        padding: 20px 0;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      nav ul li {
+        display: inline-block;
+        margin: 0 30px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #343a40;
+        font-size: 18px;
+        transition: 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: rgb(5, 113, 238);
+      }
+
+      #auth-section button {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      #auth-section button:hover {
+        background-color: darkred;
+      }
+
+      main {
+        text-align: center;
+      }
+      main h2 {
+        margin-bottom: 10px;
+      }
+
+      main section {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 1000;
+      }
+
+      #pay-now {
+        width: 100%;
+        text-decoration: solid;
+        font-size: medium;
+        font-weight: 700;
+        border-radius: 20px;
+        padding: 10px;
+        margin-top: 5px;
+        background-color: rgb(243, 210, 121);
+        transition: 0.5ms;
+      }
+
+      #pay-now:hover {
+        background-color: rgb(247, 173, 36);
+        cursor: pointer;
+      }
+
+      #cart-count {
+        background-color: red;
+        color: white;
+        padding: 3px 7px;
+        border-radius: 50%;
+        margin: 4px;
+      }
+
+      #cart-items {
+        width: 100%;
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        min-height: 50vh;
+      }
+
+      /* ================= Card ================= */
+
+      .card {
+        width: 250px;
+        height: 380px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        margin: 10px;
+        text-align: center;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        transition: 0.6ms;
+      }
+
+      .card div {
+        position: absolute;
+        right: 88px;
+        bottom: 20px;
+      }
+
+      .card div button {
+        margin: 4px;
+
+        background-color: transparent;
+        border-style: none;
+      }
+
+      .card div button:hover {
+        cursor: pointer;
+      }
+
+      #remove-btn {
+        position: absolute;
+        background-color: #ff4d4d;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        bottom: 6px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: 0.5ms;
+      }
+
+      .remove-btn:hover {
+        background-color: #e60000;
+        transform: scale(1.05);
+      }
+
+      /* ================= FOOTER ================= */
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #343a40;
+        color: #f8f9fa;
+      }
+
+      footer div {
+        display: inline-block;
+        padding: 10px;
+      }
+
+      footer div a {
+        padding: 4px;
+        transition: 0.5ms;
+        color: rgba(10, 132, 240, 0.808);
+      }
+
+      footer div a:hover {
+        color: rgb(247, 233, 113);
+      }
+
+      footer div i {
+        padding: 4px;
+        transition: 0.5ms;
+      }
+
+      footer div i:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+
+      #back-to-top {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: rgb(56, 55, 55);
+        padding: 15px;
+        transition: 0.5ms;
+      }
+
+      #back-to-top a {
+        color: white;
+      }
+      #back-to-top:hover {
+        background-color: rgb(87, 84, 84);
+        cursor: pointer;
+      }
+
+      /* Responsive (Mobile) */
+      @media (max-width: 768px) {
+        nav ul li {
+          display: block;
+          text-align: center;
+          border-top: 1px solid rgb(0, 0, 0);
+          border-top: 1px solid rgb(0, 0, 0);
+
+          padding: 10px;
+        }
+
+        nav ul li a {
+          text-decoration: none;
+          color: black;
+          font-size: 18px;
+          transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+          color: yellow;
+        }
+      }
+    </style> -->
+  
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="Home.html"
+              ><i class="fa-solid fa-bag-shopping"></i> ||
+              <i class="fa-solid fa-wallet"></i> LogicMart</a
+            >
+          </li>
+          <li><a href="Product.html">Products</a></li>
+          <li><a href="About.html">About</a></li>
+          <li class="adminOption"><a href="Inventory.html">My Inventory</a></li>
+          <li class="adminOption"><a href="User.html">My Users</a></li>
+          <li><a href="ViewOrder.html">View Orders</a></li>
+          <li>
+            <a href="cart.html">
+              <i class="fa-solid fa-cart-shopping"></i>
+              (<span id="cart-count">0</span>)
+            </a>
+          </li>
+          <li id="auth-section"></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h2>Total: ₹<span id="total">0</span></h2>
+      <section>
+        <button id="pay-now" onclick="payNow()">Proceed to Buy</button>
+      </section>
+      <!-- Added Cart Item will be show here -->
+      <div id="cart-items"></div>
+    </main>
+
+    <!-- FOOTER -->
+
+    <button id="back-to-top">
+      <a href="#auth-section">Back To Top</a>
+    </button>
+
+    <footer>
+      <div>
+        © 2026 LogicMart Store | Shivam Dev.
+        <a href="#">About</a>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Contact Support</a>
+        <a href="#">Manage Cookies</a>
+      </div>
+      <div>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-square-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-youtube"></i>
+      </div>
+    </footer>
+
+    <!-- Required Scripts Files -->
+
+    <!-- Jquery Reference -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Loading User Profile, Admin Check, Logout Function, Single Product Data-->
+    <script src="js/common.js"></script>
+
+    <!-- Cart Related Functionality and Checkout -->
+    <script src="js/Cart.js"></script>
+
+    <!-- <script>
+      $(document).ready(function () {
+        cartCount();
+        loadCart();
+      });
+      function loadCart() {
+        let user = JSON.parse(localStorage.getItem("currentUser"));
+
+        if (!user) {
+          alert("Please login first!");
+          window.location.href = "Login.html";
+          return;
+        }
+        let userId = user.UserID;
+
+        $.ajax({
+          url: `http://localhost:50696/api/cart/${userId}`,
+          type: "GET",
+          dataType: "json",
+
+          success: function (data) {
+            displayCart(data);
+          },
+
+          error: function () {
+            alert("Error loading cart!");
+          },
+        });
+      }
+
+      function displayCart(data) {
+        let container = $("#cart-items");
+        let total = 0;
+
+        container.html("");
+
+        data.forEach((item) => {
+          //Single Product Total With Their Quantity
+          let itemTotal = item.Price * item.Qty;
+
+          //Grand Total of All Product Added in the Cart
+          total += itemTotal;
+
+          container.append(`
+      <div class="card">
+        <img src="${item.Image}" height="160" width="150" >
+        <h3>${item.Name}</h3>
+        <div>
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>Price: ₹${item.Price}</p>
+
+        <button onclick="decreaseQty(${item.CartID}, ${item.Qty})"><i class="fa-solid fa-trash"></i></button>
+        <span>${item.Qty}</span>
+        <button onclick="increaseQty(${item.CartID}, ${item.Qty})"><i class="fa-solid fa-plus"></i></button>
+
+        <p>Total: ₹${itemTotal}</p>
+
+      </div>
+              <button id="remove-btn" onclick="removeItem(${item.CartID})">Remove</button>
+
+      </div>
+    `);
+        });
+
+        if (total === 0) {
+          $("#total").html("<p> 0 </p>" + "<p> Your Cart is Empty!!! </p>");
+          $("#pay-now").prop("disabled", true);
+        } else {
+          $("#total").text(total);
+          $("#pay-now").prop("disabled", false);
+        }
+      }
+
+      function increaseQty(cartId, qty) {
+        updateQty(cartId, qty + 1);
+      }
+
+      function decreaseQty(cartId, qty) {
+        if (qty <= 1) {
+          removeItem(cartId);
+        } else {
+          updateQty(cartId, qty - 1);
+        }
+      }
+
+      function updateQty(cartId, qty) {
+        $.ajax({
+          url: "http://localhost:50696/api/cart/update",
+          type: "PUT",
+          contentType: "application/json",
+
+          data: JSON.stringify({
+            CartID: cartId,
+            CartQty: qty,
+          }),
+
+          success: function () {
+            loadCart();
+          },
+        });
+      }
+
+      function removeItem(cartId) {
+        $.ajax({
+          url: `http://localhost:50696/api/cart/deleteById/${cartId}`,
+          type: "DELETE",
+
+          success: function (res) {
+            let msg = res;
+            alert(msg);
+            cartCount();
+            loadCart();
+          },
+        });
+      }
+
+      function payNow() {
+        let user = JSON.parse(localStorage.getItem("currentUser"));
+        if (!user) {
+          alert("Please login first!");
+          return;
+        }
+
+        $.ajax({
+          url: `http://localhost:50696/api/order/checkStock/${user.UserID}`,
+          type: "GET",
+
+          success: function (res) {
+            // Check Stock Quantity
+            if (res[0].IsAvailable == true) {
+              alert(res[0].Message);
+              window.location.href = "Payment.html";
+            } else {
+              alert(res[0].Message);
+            }
+          },
+          error: function (err) {
+            alert(err.responseText); // shows stock error
+          },
+        });
+      }
+    </script> -->
+  
+  </body>
+</html>

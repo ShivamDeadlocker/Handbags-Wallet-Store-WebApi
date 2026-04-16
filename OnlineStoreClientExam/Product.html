@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Product Css File Reference -->
+    <link rel="stylesheet" href="css/product.css" />
+
+    <!-- <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      /* ================= NAVBAR ================= */
+      nav {
+        width: 100%;
+        background-color: #f8f9fa;
+        padding: 20px 0;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      nav ul li {
+        display: inline-block;
+        margin: 0 30px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #343a40;
+        font-size: 18px;
+        transition: 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: rgb(5, 113, 238);
+      }
+
+      #auth-section button {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      #auth-section button:hover {
+        background-color: darkred;
+      }
+
+      #cart-count {
+        background-color: red;
+        color: white;
+        padding: 3px 7px;
+        border-radius: 50%;
+        margin: 4px;
+      }
+      /* ================= Filter Area ================= */
+
+      aside {
+        width: 20%;
+        display: inline-block;
+        vertical-align: top;
+        padding: 10px;
+        position: sticky;
+        top: 0;
+      }
+
+      /* ================= Product Container ================= */
+
+      #product-container {
+        width: 75%;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      /* ================= Card ================= */
+
+      .card {
+        width: 250px;
+        height: 500px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        margin: 10px;
+        text-align: center;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+      }
+
+      .card img {
+        width: 100%;
+      }
+
+      .card button {
+        position: absolute;
+        bottom: 20px;
+        right: 90px;
+        border-radius: 20px;
+        padding: 10px 20px;
+        background-color: rgb(247, 205, 90);
+        transition: 0.5s;
+      }
+
+      .card button:hover {
+        background-color: rgb(247, 173, 36);
+        cursor: pointer;
+      }
+
+      .card div {
+        position: absolute;
+        right: 88px;
+        bottom: 90px;
+      }
+
+      .card p {
+        position: absolute;
+        right: 100px;
+        bottom: 50px;
+      }
+
+      /* ================= FOOTER ================= */
+
+      #back-to-top {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: rgb(56, 55, 55);
+        padding: 15px;
+        transition: 0.5ms;
+      }
+
+      #back-to-top a {
+        color: white;
+      }
+
+      #back-to-top:hover {
+        background-color: rgb(87, 84, 84);
+        cursor: pointer;
+      }
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #343a40;
+        color: #f8f9fa;
+      }
+
+      footer div {
+        display: inline-block;
+        padding: 10px;
+      }
+
+      footer div a {
+        padding: 4px;
+        transition: 0.5ms;
+        color: rgba(10, 132, 240, 0.808);
+      }
+
+      footer div a:hover {
+        color: rgb(247, 233, 113);
+      }
+
+      footer div i {
+        padding: 4px;
+        transition: 0.5ms;
+      }
+
+      footer div i:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+
+      /* Responsive (Mobile) */
+      @media (max-width: 768px) {
+        nav ul li {
+          display: block;
+          text-align: center;
+          border-top: 1px solid rgb(0, 0, 0);
+          border-top: 1px solid rgb(0, 0, 0);
+
+          padding: 10px;
+        }
+
+        nav ul li a {
+          text-decoration: none;
+          color: black;
+          font-size: 18px;
+          transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+          color: yellow;
+        }
+
+        aside {
+          width: 30%;
+          display: block;
+          position: static;
+        }
+
+        .card {
+          display: inline-block;
+        }
+
+        #product-container {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style> -->
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="Home.html"
+              ><i class="fa-solid fa-bag-shopping"></i> ||
+              <i class="fa-solid fa-wallet"></i> LogicMart</a
+            >
+          </li>
+          <li><a href="Product.html">Products</a></li>
+          <li><a href="About.html">About</a></li>
+          <li class="adminOption"><a href="Inventory.html">My Inventory</a></li>
+          <li class="adminOption"><a href="User.html">My Users</a></li>
+          <li><a href="ViewOrder.html">View Orders</a></li>
+          <li>
+            <a href="cart.html">
+              <i class="fa-solid fa-cart-shopping"></i>
+              (<span id="cart-count">0</span>)
+            </a>
+          </li>
+          <li id="auth-section"></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Category Filter Section Using Brand Name and  Radio Buttons -->
+      <aside>
+        <h2>Categories</h2>
+        <label
+          ><input type="radio" name="category" value="0" checked />All</label
+        ><br />
+        <label><input type="radio" name="category" value="1" />Fossil</label
+        ><br />
+        <label><input type="radio" name="category" value="2" />Calvin</label
+        ><br />
+        <label><input type="radio" name="category" value="3" />Lovevook</label
+        ><br />
+        <label><input type="radio" name="category" value="4" />Bagsmart</label
+        ><br />
+        <label><input type="radio" name="category" value="5" />Tommy</label
+        ><br />
+      </aside>
+
+      <!-- Data is fill up using the JS -->
+      <section id="product-container"></section>
+    </main>
+
+    <!-- FOOTER -->
+    <button id="back-to-top"><a href="#auth-section">Back To Top</a></button>
+    <footer>
+      <div>
+        © 2026 LogicMart Store | Shivam Dev.
+        <a href="#">About</a>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Contact Support</a>
+        <a href="#">Manage Cookies</a>
+      </div>
+      <div>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-square-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-youtube"></i>
+      </div>
+    </footer>
+
+    <!-- Required Scripts -->
+    <!-- Jquery link (CDN) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Loading User Profile, Admin Check, Logout Function -->
+    <script src="js/common.js"></script>
+
+    <!-- For Product Data -->
+    <script src="js/Product.js"></script>
+
+    <!-- <script>
+      $(document).ready(function () {
+        loadProducts();
+      });
+
+      function loadProducts() {
+        $.ajax({
+          url: "http://localhost:50696/api/product/all",
+
+          type: "GET",
+
+          dataType: "json",
+
+          success: function (data) {
+            console.log(data);
+            displayProducts(data);
+          },
+          error: function () {
+            alert("Error loading products!");
+          },
+        });
+      }
+
+      //Getting the Div id where the Products are displayed
+      const container = document.getElementById("product-container");
+
+      // Display products
+      function displayProducts(data) {
+        container.innerHTML = "";
+
+        data.forEach((product) => {
+          const card = `
+      <div class="card">
+        <img src="${product.ProdImg}" alt="Product Image" height="250" width="150">
+        <h3>${product.ProdName}</h3>
+        <h4>${product.ProdDsc}</h4>
+        <div>⭐⭐⭐⭐⭐</div>
+        <p>₹${product.ProdPrice}.00</p>
+        <button onclick="addToCart(${product.ProdID},${product.ProdPrice} )">Add to Cart</button>
+      </div>
+    `;
+          container.innerHTML += card;
+        });
+      }
+
+      //=========================================== Filter Condition ======================================//
+
+      // Filter Condition
+      $("input[name='category']").on("change", filterProducts);
+
+      function filterProducts() {
+        let selected = $("input[name='category']:checked").val();
+
+        // If nothing selected → show all
+        if (selected === "0") {
+          loadProducts();
+          return;
+        }
+
+        // Filter data
+        $.ajax({
+          url: `http://localhost:50696/api/product/category/${selected}`,
+
+          type: "GET",
+
+          dataType: "json",
+
+          success: function (data) {
+            displayProducts(data);
+          },
+          error: function () {
+            alert("Error loading products!");
+          },
+        });
+      }
+
+      //====================== Add to cart ===============================================//
+      function addToCart(prodId, price) {
+        let user = JSON.parse(localStorage.getItem("currentUser"));
+
+        // Check login
+        if (!user) {
+          alert("Please login first!");
+          window.location.href = "Login.html";
+          return;
+        }
+
+        let cartData = {
+          UserID: user.UserID,
+          ProdID: prodId,
+          CartQty: 1,
+          Price: price,
+        };
+
+        $.ajax({
+          url: "http://localhost:50696/api/cart/add",
+          type: "POST",
+          contentType: "application/json",
+          data: JSON.stringify(cartData),
+
+          success: function () {
+            cartCount();
+            // alert("Added to cart!");
+          },
+
+          error: function () {
+            alert("Error adding to cart!");
+          },
+        });
+      }
+    </script> -->
+  </body>
+</html>

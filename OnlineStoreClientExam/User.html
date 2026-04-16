@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- User Details Css -->
+    <link rel="stylesheet" href="css/user-details.css" />
+
+    <!-- <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      /* ================= NAVBAR ================= */
+
+      nav {
+        width: 100%;
+        background-color: #f8f9fa9f;
+        padding: 20px 0;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      nav ul li {
+        display: inline-block;
+        margin: 0 30px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #343a40;
+        font-size: 18px;
+        transition: 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: rgb(5, 113, 238);
+      }
+
+      /* Cart Count Section */
+      #cart-count {
+        background-color: red;
+        color: white;
+        padding: 3px 7px;
+        border-radius: 50%;
+        margin: 4px;
+      }
+
+      .container {
+        width: 500px;
+        height: auto;
+        padding: 10px;
+        border: 2px solid burlywood;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        margin: 100px auto;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      input {
+        width: 95%;
+        padding: 8px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
+
+      select {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+      }
+
+      label {
+        display: block;
+      }
+
+      button {
+        padding: 8px 15px;
+        margin: 5px 3px;
+        border: none;
+        background: #3094ff;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.5ms;
+      }
+
+      button:hover:not(:disabled) {
+        transform: scale(1.1);
+        background: #0073ee;
+        cursor: pointer;
+      }
+
+      /* Disabled State */
+      button:disabled {
+        background: #a0a0a0; /* Grey = Disabled */
+        color: #e0e0e0;
+        cursor: not-allowed;
+        transform: scale(1);
+        opacity: 0.7;
+      }
+
+      /* ================= FOOTER ================= */
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #343a40;
+        color: #f8f9fa;
+      }
+
+      footer div {
+        display: inline-block;
+        padding: 10px;
+      }
+
+      footer div a {
+        padding: 4px;
+        transition: 0.5ms;
+        color: rgba(10, 132, 240, 0.808);
+      }
+
+      footer div a:hover {
+        color: rgb(247, 233, 113);
+      }
+
+      footer div i {
+        padding: 4px;
+        transition: 0.5ms;
+      }
+
+      footer div i:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+
+      /* Responsive (Mobile) */
+      @media (max-width: 768px) {
+        nav ul li {
+          display: block;
+          text-align: center;
+          border-top: 1px solid rgb(12, 12, 12);
+          border-bottom: 1px solid rgb(5, 5, 5);
+
+          padding: 10px;
+        }
+
+        nav ul li a {
+          text-decoration: none;
+          color: black;
+          font-size: 18px;
+          transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+          color: yellow;
+        }
+      }
+    </style> -->
+  
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="Home.html"
+              ><i class="fa-solid fa-bag-shopping"></i> ||
+              <i class="fa-solid fa-wallet"></i> LogicMart</a
+            >
+          </li>
+          <li><a href="Product.html">Products</a></li>
+          <li><a href="About.html">About</a></li>
+          <li class="adminOption"><a href="Inventory.html">My Inventory</a></li>
+          <li class="adminOption"><a href="User.html">My Users</a></li>
+          <li><a href="ViewOrder.html">View Orders</a></li>
+          <li>
+            <a href="cart.html">
+              <i class="fa-solid fa-cart-shopping"></i>
+              (<span id="cart-count">0</span>)
+            </a>
+          </li>
+          <li id="auth-section"></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h2>User Details</h2>
+      <label> Select UserId For Details</label>
+      <select id="ddlUser"></select>
+
+      <label>Name</label>
+      <input type="text" id="name" />
+
+      <label>Email</label>
+      <input type="email" id="email" />
+
+      <label>Password</label>
+      <input type="password" id="password" />
+
+      <label>User Type</label>
+      <select id="ddlUserType"></select>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div>
+        © 2026 LogicMart Store | Shivam Dev.
+        <a href="About.html">About</a>
+        <a href="About.html">Terms</a>
+        <a href="About.html">Privacy</a>
+        <a href="About.html">Contact Support</a>
+        <a href="About.html">Manage Cookies</a>
+      </div>
+      <div>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-square-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-youtube"></i>
+      </div>
+    </footer>
+
+    <!-- Required Js Files -->
+
+    <!-- Jquery Reference -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Loading User Profile, Admin Check, Logout Function, Single Product Data-->
+    <script src="js/common.js"></script>
+
+    <script src="js/UserDetails.js"></script>
+
+    <!-- <script>
+      $(document).ready(() => {
+        loadUserId(); // Load UserId dropdown
+        loadUserType(); // Load User Type dropdown
+        clear();
+        disable();
+      });
+
+      //Load UserID Data and Append in the DDl
+      function loadUserId() {
+        $.ajax({
+          url: "http://localhost:50696/api/userdetails/user/",
+
+          type: "GET",
+
+          dataType: "json",
+
+          success: function (data) {
+            $("#ddlUser").empty();
+
+            $.each(data, function (index, user) {
+              $("#ddlUser").append(
+                '<option value="' +
+                  user.UserID +
+                  '">' +
+                  user.UserID +
+                  "</option>",
+              );
+            });
+          },
+
+          error: function (err) {
+            alert("Failed to load User Id: " + err.responseText);
+          },
+        });
+      }
+
+      //Load User Type Data and Append in the DDl
+      function loadUserType() {
+        $.ajax({
+          url: "http://localhost:50696/api/userdetails/userType/",
+
+          type: "GET",
+
+          dataType: "json",
+
+          success: function (data) {
+            $("#ddlUserType").empty();
+
+            $.each(data, function (index, userType) {
+              $("#ddlUserType").append(
+                '<option value="' +
+                  userType.TypeId +
+                  '">' +
+                  userType.TypeName +
+                  "</option>",
+              );
+            });
+          },
+
+          error: function (err) {
+            alert("Failed to load User Type: " + err.responseText);
+          },
+        });
+      }
+
+      //Clear For Function
+      function clear() {
+        $("#name").val("");
+        $("#email").val("");
+        $("#password").val("");
+      }
+
+      function disable() {
+        $("#name").prop("disabled", true);
+        $("#email").prop("disabled", true);
+        $("#password").prop("disabled", true);
+        $("#ddlUserType").prop("disabled", true);
+      }
+
+      //DDL Change Event
+
+      $("#ddlUser").change(() => {
+        let id = $("#ddlUser").val();
+
+        $.ajax({
+          url: "http://localhost:50696/api/userdetails/user",
+
+          type: "GET",
+
+          dataType: "json",
+
+          success: (data) => {
+            let user = data.find((u) => u.UserID == id);
+
+            $("#name").val(user.UserName);
+            $("#email").val(user.UserEmail);
+            $("#password").val(user.UserPassword);
+            $("#ddlUserType").val(user.TypeId);
+          },
+
+          error: () => {
+            alert("Error fetching user!!!");
+          },
+        });
+      });
+    </script> -->
+  
+  </body>
+</html>

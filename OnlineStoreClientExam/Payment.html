@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- Payment Page Css File Reference -->
+    <link rel="stylesheet" href="css/payment.css" />
+
+    <!-- <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      /* ================= NAVBAR ================= */
+      nav {
+        width: 100%;
+        background-color: #f8f9fa;
+        padding: 20px 0;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      nav ul li {
+        display: inline-block;
+        margin: 0 30px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #343a40;
+        font-size: 18px;
+        transition: 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: rgb(5, 113, 238);
+      }
+
+      #auth-section button {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      #auth-section button:hover {
+        background-color: darkred;
+      }
+
+      .payment-card {
+        width: 350px;
+        margin: 80px auto;
+        padding: 20px;
+        border-radius: 10px;
+        background: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .payment-card input {
+        width: 95%;
+        padding: 8px;
+        margin: 10px 0;
+      }
+
+      .payment-card button {
+        width: 100%;
+        padding: 10px;
+        background-color: red;
+
+        /* background: #28a745; */
+        color: white;
+        border: none;
+        border-radius: 5px;
+      }
+
+      .payment-card button:hover {
+        /* background: #218838; */
+        background-color: darkred;
+      }
+
+      h2 {
+        text-align: center;
+      }
+
+      /* ================= FOOTER ================= */
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #343a40;
+        color: #f8f9fa;
+      }
+
+      footer div {
+        display: inline-block;
+        padding: 10px;
+      }
+
+      footer div a {
+        padding: 4px;
+        transition: 0.5ms;
+        color: rgba(10, 132, 240, 0.808);
+      }
+
+      footer div a:hover {
+        color: rgb(247, 233, 113);
+      }
+
+      footer div i {
+        padding: 4px;
+        transition: 0.5ms;
+      }
+
+      footer div i:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+
+      #back-to-top {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background-color: rgb(56, 55, 55);
+        padding: 15px;
+        transition: 0.5ms;
+      }
+
+      #back-to-top a {
+        color: white;
+      }
+      #back-to-top:hover {
+        background-color: rgb(87, 84, 84);
+        cursor: pointer;
+      }
+
+      /* Responsive (Mobile) */
+      @media (max-width: 768px) {
+        nav ul li {
+          display: block;
+          text-align: center;
+          border-top: 1px solid rgb(0, 0, 0);
+          border-top: 1px solid rgb(0, 0, 0);
+          padding: 10px;
+        }
+
+        nav ul li a {
+          text-decoration: none;
+          color: black;
+          font-size: 18px;
+          transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+          color: yellow;
+        }
+      }
+    </style> -->
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="Home.html"
+              ><i class="fa-solid fa-bag-shopping"></i> ||
+              <i class="fa-solid fa-wallet"></i> LogicMart</a
+            >
+          </li>
+          <li><a href="Product.html">Products</a></li>
+          <li><a href="About.html">About</a></li>
+          <li class="adminOption"><a href="Inventory.html">My Inventory</a></li>
+          <li class="adminOption"><a href="User.html">My Users</a></li>
+          <li><a href="ViewOrder.html">View Orders</a></li>
+          <li>
+            <a href="cart.html">
+              <i class="fa-solid fa-cart-shopping"></i>
+              (<span id="cart-count">0</span>)
+            </a>
+          </li>
+          <li id="auth-section"></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="payment-card">
+      <h2>Payment Details</h2>
+
+      <label>Card Number</label>
+      <input
+        type="text"
+        id="cardNumber"
+        maxlength="16"
+        placeholder="Enter 16 digit your card number"
+      />
+
+      <label>Expiry Date (MM/YY)</label>
+      <input type="month" id="expiry" placeholder="MM/YY" />
+
+      <label>CVV</label>
+      <input type="password" id="cvv" maxlength="3" placeholder="123" />
+
+      <button onclick="paymentDetails()">Pay Now</button>
+    </div>
+
+    <footer>
+      <div>
+        © 2026 LogicMart Store | Shivam Pro.
+        <a href="#">About</a>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Contact Support</a>
+        <a href="#">Manage Cookies</a>
+      </div>
+      <div>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-square-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-youtube"></i>
+      </div>
+    </footer>
+    <!-- Required Scripts Files -->
+
+    <!-- Jquery Reference -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Loading User Profile, Admin Check, Logout Function, Single Product Data-->
+    <script src="js/common.js"></script>
+
+    <script src="js/Payment.js"></script>
+
+    <!-- <script>
+      function paymentDetails() {
+        let card = $("#cardNumber").val().trim();
+        let expiry = $("#expiry").val().trim();
+        let cvv = $("#cvv").val().trim();
+
+        //Checking the validation, isNaN check that inputs fields contains only number
+        if (card.length !== 16 || isNaN(card)) {
+          alert("Invalid Card Number!!!");
+          return;
+        }
+
+        if (cvv.length !== 3 || isNaN(cvv)) {
+          alert("Invalid CVV Number!!!");
+          return;
+        }
+
+        if (!expiry) {
+          alert("Select expiry date!");
+          return;
+        }
+
+        checkout();
+      }
+
+      function checkout() {
+        let user = JSON.parse(localStorage.getItem("currentUser"));
+
+        if (!user) {
+          alert("Please login first!");
+          return;
+        }
+
+        $.ajax({
+          url: `http://localhost:50696/api/order/checkout/${user.UserID}`,
+          type: "POST",
+
+          dataType: "json",
+
+          success: function (res) {
+            // Save bill info
+            if (res[0].IsPurchase == true) {
+              //Checking if the BillDetails Are Already there , if yes then removing it and storing a new bill details for new order
+              let BillDetails = JSON.parse(localStorage.getItem("BillDetails"));
+
+              if (BillDetails == null) {
+                localStorage.setItem("BillDetails", JSON.stringify(res));
+                alert(res[0].Message);
+                window.location.href = "Success.html";
+              } else {
+                localStorage.removeItem("BillDetails");
+                localStorage.setItem("BillDetails", JSON.stringify(res));
+                alert(res[0].Message);
+                window.location.href = "Success.html";
+              }
+            } else {
+              alert(res[0].Message);
+            }
+          },
+
+          error: function (err) {
+            alert(err.responseText); // shows stock error
+          },
+        });
+      }
+    </script> -->
+  </body>
+</html>

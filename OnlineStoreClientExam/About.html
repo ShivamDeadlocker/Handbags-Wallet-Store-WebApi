@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- Reference to the About Page CSS File -->
+    <link rel="stylesheet" href="css/about.css" />
+
+    <!-- <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+
+      /* ================= NAVBAR ================= */
+      nav {
+        width: 100%;
+        background-color: #f8f9fa9f;
+        padding: 20px 0;
+      }
+
+      nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+      }
+
+      nav ul li {
+        display: inline-block;
+        margin: 0 30px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: #343a40;
+        font-size: 18px;
+        transition: 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: rgb(5, 113, 238);
+      }
+
+      #cart-count {
+        background-color: red;
+        color: white;
+        padding: 3px 7px;
+        border-radius: 50%;
+        margin: 4px;
+      }
+
+      #auth-section button {
+        background-color: red;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      #auth-section button:hover {
+        background-color: darkred;
+      }
+
+      /* ================= Main Section ================= */
+
+      main {
+        text-align: center;
+      }
+
+      main section {
+        width: 28%;
+        min-height: 250px;
+        border: 1px solid bisque;
+        border-radius: 20px;
+        padding: 15px;
+        margin: 15px;
+        display: inline-block;
+        vertical-align: top;
+        color: white;
+        background: linear-gradient(to right, #ff7e5f, #feb47b);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+      }
+
+      main section:hover {
+        transform: translateY(-5px);
+      }
+
+      main section h1 {
+        color: #333;
+      }
+
+      main section h2 {
+        color: #0f0f0f;
+        font-size: 18px;
+      }
+
+      /* Promotional Video CSS , Here Iframe is used  */
+      #promo {
+        text-align: center;
+        margin: 10px;
+      }
+
+      #promo iframe {
+        border-radius: 5px;
+      }
+
+      /* ================= FOOTER ================= */
+      footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #343a40;
+        color: #f8f9fa;
+      }
+
+      footer div {
+        display: inline-block;
+        padding: 10px;
+      }
+
+      footer div a {
+        padding: 4px;
+        transition: 0.5ms;
+        color: rgba(10, 132, 240, 0.808);
+      }
+
+      footer div a:hover {
+        color: rgb(247, 233, 113);
+      }
+
+      footer div i {
+        padding: 4px;
+        transition: 0.5ms;
+      }
+
+      footer div i:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+
+      /* Responsive (Mobile) */
+      @media (max-width: 768px) {
+        nav ul li {
+          display: block;
+          text-align: center;
+          border-top: 1px solid rgb(255, 255, 255);
+          border-bottom: 1px solid rgb(255, 255, 255);
+
+          padding: 10px;
+        }
+
+        nav ul li a {
+          text-decoration: none;
+          color: white;
+          font-size: 18px;
+          transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+          color: yellow;
+        }
+
+        main section {
+          width: auto;
+        }
+
+        #promo iframe {
+          width: auto;
+        }
+      }
+    </style> -->
+
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="Home.html"
+              ><i class="fa-solid fa-bag-shopping"></i> ||
+              <i class="fa-solid fa-wallet"></i> LogicMart</a
+            >
+          </li>
+          <li><a href="Product.html">Products</a></li>
+          <li><a href="About.html">About</a></li>
+          <li class="adminOption"><a href="Inventory.html">My Inventory</a></li>
+          <li class="adminOption"><a href="User.html">My Users</a></li>
+          <li><a href="ViewOrder.html">View Orders</a></li>
+          <li>
+            <a href="cart.html">
+              <i class="fa-solid fa-cart-shopping"></i>
+              (<span id="cart-count">0</span>)
+            </a>
+          </li>
+          <li id="auth-section"></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+      <section>
+        <h1>Wo We Are</h1>
+        <h2>Smarter Technology For All</h2>
+        <p>
+          We’re building a more inclusive and sustainable world where every
+          person and business has access to the technology that allows them to
+          achieve their own intelligent transformation. Our global team is
+          fueled by one purpose: smarter technology for all.
+        </p>
+      </section>
+      <section>
+        <h1>What We Do</h1>
+        <h2>Innovation is What We Do Best</h2>
+        <p>
+          InoLap's dedicated teams, innovative technology, and global reach and
+          capabilities help the world transform more efficiently, more reliably
+          and safely.
+        </p>
+      </section>
+      <section>
+        <h1>Our Impact</h1>
+        <h2>Corporate Responsibility in Action</h2>
+        <p>
+          At InoLap, we believe everyone deserves transformation and a chance to
+          reach their full potential. InoLap has always thrived on impact,
+          making a difference and helping others face the challenges of today
+          and tomorrow.
+        </p>
+      </section>
+    </main>
+
+    <!-- Iframe for the video -->
+    <div id="promo">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/nfQL1a-FTcA?si=aKlfSj5truI49u0V"
+        title="YouTube video player"
+        frameborder="0"
+        allow="
+          accelerometer;
+          autoplay;
+          clipboard-write;
+          encrypted-media;
+          gyroscope;
+          picture-in-picture;
+          web-share;
+        "
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div>
+        © 2026 LogicMart Store | Shivam Dev.
+        <a href="About.html">About</a>
+        <a href="About.html">Terms</a>
+        <a href="About.html">Privacy</a>
+        <a href="About.html">Contact Support</a>
+        <a href="About.html">Manage Cookies</a>
+      </div>
+      <div>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-square-facebook"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-youtube"></i>
+      </div>
+    </footer>
+
+    <!-- Required JS Scripts Files -->
+
+    <!-- Jquery link (CDN) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Loading User Profile, Admin Check, Logout Function -->
+    <script src="js/common.js"></script>
+  </body>
+</html>
